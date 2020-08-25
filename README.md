@@ -45,7 +45,7 @@
 
 
 ### Association
-## belongs_to :items
+## belongs_to :item
 ## belongs_to :user
 ## has_one :shipping
 
@@ -61,5 +61,4 @@
 | phone_numder  | string     | null: false                    |
 
 ### Association
-## has_many :items
 ## belongs_to :purchase
