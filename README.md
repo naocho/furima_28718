@@ -21,6 +21,8 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
+| item_name    | string     | null: false                    |
+| explanation  | text       | null: false                    |
 | price        | integer    | null: false                    |
 | image        | string     | null: false                    |
 | category     | integer    | null: false                    |
@@ -40,8 +42,7 @@
 | -------- | ---------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
 | item     | references | null: false, foreign_key: true |
-| sold_out | references | null: false,                   |
-| image    | references | null: false,                   |
+
 
 ### Association
 ## has_many :items
@@ -51,10 +52,11 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | postal_code   | string     | null: false                    |
+| prefectures   | integer    | null: false                    |
 | village       | string     | null: false                    |
 | address       | string     | null: false                    |
 | building_name | string     |                                |
-| phone_numder  | integer    | null: false                    |
+| phone_numder  | string     | null: false                    |
 
 ### Association
 ## has_many :items
