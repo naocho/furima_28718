@@ -12,8 +12,7 @@
 | surname       | string | null: false |
 | kana surname  | string | null: false |
 | date           | string | null: false |
-## has_many :item
-## has_many :shipping
+## has_many :items
 
 ## items テーブル
 
@@ -23,7 +22,7 @@
 | price        | integer    | null: false                    |
 | image        | string     | null: false                    |
 ##  belongs_to :user
-##  belongs_to :purchase
+##  has_one :purchase
 ##  has_many :shipping
 
 ## purchase テーブル
@@ -45,5 +44,4 @@
 | address       | string     | null: false                    |
 | building_name | string     |                    |
 | phone_numder  | integer    | null: false                    |
-## belong_to :user
 ## has_many :item
