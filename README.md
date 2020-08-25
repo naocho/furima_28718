@@ -11,7 +11,7 @@
 | kana name     | string | null: false |
 | surname       | string | null: false |
 | kana surname  | string | null: false |
-| date           | string | null: false |
+| date          | string | null: false |
 ## has_many :items
 
 ## items テーブル
@@ -42,6 +42,6 @@
 | postal_code   | string     | null: false                    |
 | village       | string     | null: false                    |
 | address       | string     | null: false                    |
-| building_name | string     |                    |
+| building_name | string     |                                |
 | phone_numder  | integer    | null: false                    |
 ## has_many :item
