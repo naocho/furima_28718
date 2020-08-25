@@ -1,24 +1,55 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+| name     | string | null: false |
+| surname  | string | null: false |
+| birtday  | string | null: false |
+## has_many :item
+## has_many :shipping
 
-* Ruby version
+## items テーブル
 
-* System dependencies
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user_id      | references | null: false, foreign_key: true |
+| purchase_id  | references | null: false, foreign_key: true |
+| shipping_id  | references | null: false, foreign_key: true |
+| price        | integer    | null: false                    |
+| category     | string     | null: false                    |
+| status       | string     | null: false                    |
+| delivery fee | integer    | null: false                    |
+| area         | string     | null: false                    |
+| delivery day | date       | null: false                    |
+| image        | string     | null: false                    |
+##  belongs_to :user
+##  belongs_to :purchase
+##  has_many :shipping
 
-* Configuration
+## purchase テーブル
 
-* Database creation
+| Column   | Type       | Options      |
+| -------- | ---------- | ------------ |
+| sold out | references | null: false, |
+| image    | references | null: false, |
+## has_many :item
 
-* Database initialization
+## shipping テーブル
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user_id       | references | null: false, foreign_key: true |
+| item_id       | references | null: false, foreign_key: true |
+| postal code   | string     | null: false                    |
+| prefectures   | string     | null: false                    |
+| village       | string     | null: false                    |
+| address       | string     | null: false                    |
+| building name | string     | null: false                    |
+| phone numder  | integer    | null: false                    |
+## belong_to :user
+## has_many :item
