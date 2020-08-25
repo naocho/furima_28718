@@ -15,14 +15,14 @@
 
 ### Association
 ## has_many :items
-## has_one :purchase
+## has_many :purchase
 
 ## items テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
-| item_name    | string     | null: false                    |
+| name         | string     | null: false                    |
 | explanation  | text       | null: false                    |
 | price        | integer    | null: false                    |
 | image        | string     | null: false                    |
@@ -53,6 +53,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
 | postal_code   | string     | null: false                    |
 | prefectures   | integer    | null: false                    |
 | village       | string     | null: false                    |
