@@ -53,7 +53,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
+| purchase      | references | null: false, foreign_key: true |
 | postal_code   | string     | null: false                    |
 | prefectures   | integer    | null: false                    |
 | village       | string     | null: false                    |
