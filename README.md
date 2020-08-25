@@ -15,6 +15,7 @@
 
 ### Association
 ## has_many :items
+## has_one :purchase
 
 ## items テーブル
 
@@ -34,7 +35,6 @@
 ### Association
 ##  belongs_to :user
 ##  has_one :purchase
-##  has_many :shipping
 
 ## purchase テーブル
 
@@ -45,7 +45,9 @@
 
 
 ### Association
-## has_many :items
+## belongs_to :items
+## belongs_to :user
+## has_one :shipping
 
 ## shipping テーブル
 
@@ -60,3 +62,4 @@
 
 ### Association
 ## has_many :items
+## belongs_to :purchase
