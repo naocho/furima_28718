@@ -10,7 +10,7 @@ class User < ApplicationRecord
     validates :nickname
     validates :password,      format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,100}+\z/, message: '半角英数字混合で6文字以上使用してください'}
     #データベースを超えるまではパスワードの記述はpasswordであり、データベースを超えたあとの記述はencrypted_passwordである
-    #validates :email, は＠の指定があるからいるかもしれない
+    validates :email,         format: { with: /\A.+@.+\z/, message: '@を含めてください'}
     validates :name,          format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: '全角文字を使用してください'}
     validates :kana_name,     format: { with: /\A[ァ-ヶー－]+\z/, message: '全角文字を使用してください'}
     validates :surname,       format: { with: /\A[ぁ-んァ-ン一-龥]+\z/,message: '全角文字を使用してください'}
