@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::Base
-  before_action :basic_auth
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]  # 環境変数を読み込む記述に変更
     end
+  end
+
+  private
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :email, :name, :kana_name, :surname, :kana_surname, :birthday]) 
+    #:sign_up,(deviseを入ってる時に使う処理名) keys: [登録時に必要なカラム（許可するキー]、因みにemailとpasswordはdeviseに初めから入ってる
   end
 end
