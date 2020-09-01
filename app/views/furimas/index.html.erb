@@ -180,10 +180,29 @@
   </div>
   <%# //商品一覧 %>
 </div>
+<%# ここは同じ出品ボタンを二つ作りログインしていなければログインボタンへ%>
+<%# ログインしていれば出品ページへ飛べる様に条件を分岐させる記述をする。%>
+<% if user_signed_in? %>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>出品する</span>
-  <a href="/furima/new">
+  <a href="/furimas/new">
     <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
   </a>
 </div>
+<% else %>
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>出品する</span>
+  <a href="/users/sign_up">
+    <%= image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  </a>
+</div>  
+  </ul>
+<% end %>
+
 <%= render "shared/footer" %>
+
+<%# <% if user_signed_in? %>
+  <%# -> 出品ページに戦意する出品ボタン ログインしてるから
+      <% else %>
+<%#  -> ログインページに戦意する出品ボタン ログインしてないから
+      <% %>
