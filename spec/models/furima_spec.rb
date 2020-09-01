@@ -101,7 +101,11 @@ describe Furima, type: :model do
         @furima.valid?
         expect(@furima.errors.full_messages).to include("Price is invalid")
       end
-
+      it "価格の範囲が300~9999999以外である時" do
+        @furima.price  = 99999999999999999
+        @furima.valid?
+        expect(@furima.errors.full_messages).to include("Price is invalid")
+      end
       it "販売価格は半角数字のみ" do
         @furima.price  = 'aiks'
         @furima.valid?

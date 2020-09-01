@@ -21,6 +21,6 @@ class Furima < ApplicationRecord
     validates :delivery_fee_id,       numericality: { other_than: 1 } 
     validates :area_id,               numericality: { other_than: 1 } 
     validates :delivery_day_id,       numericality: { other_than: 1 } 
-    validates :price,                 format: { with: /\A[0-9]+{3,7}\z/}
+    validates :price,                 format: { with: /\A[0-9]{3,7}\z/}
   end
 end

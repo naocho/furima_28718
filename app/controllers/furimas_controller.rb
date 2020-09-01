@@ -12,8 +12,6 @@ def new
 end
 
 def create
-  # @item = Item.find(params[:user_id])
-  # @furima = @item.messages.new(item_params)
 
   @item = Furima.new(item_params)
   # Item.create(item_params)
