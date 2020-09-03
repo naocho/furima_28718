@@ -14,10 +14,10 @@
 | birtday       | date   | null: false |
 
 ### Association
-## has_many :items
+## has_many :furima
 ## has_many :purchases
 
-## items テーブル
+## furima テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
@@ -41,11 +41,11 @@
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
-| item     | references | null: false, foreign_key: true |
+| furima   | references | null: false, foreign_key: true |
 
 
 ### Association
-## belongs_to :item
+## belongs_to :furima
 ## belongs_to :user
 ## has_one :shipping
 
