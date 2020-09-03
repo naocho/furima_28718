@@ -28,6 +28,10 @@ end
 def destroy
 
 end
+#unless user_signed_in?
+#   redirect_to hoge_path
+# end
+#購入画面のコントローラにて入れて、ログインしていないユーザーをサインインに飛ばす
 
 def edit
 
@@ -38,7 +42,8 @@ def update
 end
 
 def show
-  
+  @item = Furima.find(params[:id])
+  #findメソッドはモデル名.find(レコード:id)と言う書き方
 end
 
 private
@@ -53,5 +58,6 @@ def move_to_index
     unless user_signed_in?
       redirect_to action: :index
     end
-  end
+end
+
 end
