@@ -8,6 +8,7 @@ class Furima < ApplicationRecord
   belongs_to_active_hash :delivery_day
 
   belongs_to :user  # usersテーブルとのアソシエーション
+  # has_one :purchase
   has_one_attached :image  # Active StorageのGemを導入した際に作れるアソシエーション
   #後ろのシンボルはアップロードするときのキーと紐付ける
 
