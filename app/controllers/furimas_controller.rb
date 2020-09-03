@@ -4,7 +4,7 @@ class FurimasController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
 def index
-  
+  @items = Furima.all.order("created_at DESC")
 end
 
 def new
@@ -17,7 +17,7 @@ def create
   # Item.create(item_params)
   if @item.valid?
     @item.save
-    redirect_to furima_index_path
+    redirect_to furimas_path
   else
     render :new
     #renderは同じview起動する、newは新たに作るコード、エラーを起動するならこれ

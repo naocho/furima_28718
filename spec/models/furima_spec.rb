@@ -1,4 +1,5 @@
 #SyntaxErrorはdoとendの数があっていないかなどの文法エラー
+#[]でエラーメッセージがない時はモデルなどのエラー自体が起動していない可能性あり
 require 'rails_helper'
 describe Furima, type: :model do
   before do
