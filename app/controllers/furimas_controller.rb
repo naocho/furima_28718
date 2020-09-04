@@ -28,8 +28,12 @@ def create
 end
 
 def destroy
-  item.destroy
-  redirect_to root_path
+
+  if @item.destroy
+    redirect_to root_path
+  else
+    render :show
+  end
 end
 #unless user_signed_in?
 #   redirect_to hoge_path
