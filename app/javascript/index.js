@@ -1,3 +1,4 @@
+//モデルとの繋ぎは:でモデルを使用するが、javascriptはidで指定してつなげる。
 // console.logでどこまでデータが通ってるか検証のコンソールで逐一確認する
 window.addEventListener('load', function(){
   // ページ全体に効果を反映させる

@@ -9,6 +9,7 @@ end
 
 def new
   @item = Furima.new
+  #このインスタンス変数を定義する事によりルーティングも設定する事になる。.newは自動でrootのルーティングになる。
 end
 
 def create
@@ -34,11 +35,20 @@ end
 #購入画面のコントローラにて入れて、ログインしていないユーザーをサインインに飛ばす
 
 def edit
-
+  @item = Furima.find(params[:id])
 end
-
+#editとupdateはセットで考えて良いと思う
+#editで定義したのはupdateでも定義して使うことが可能
 def update
+  @item = Furima.find(params[:id])
+  @item.update(item_params)
 
+  if @item.valid?
+    @item.save
+    redirect_to root_path
+  else
+    render :edit
+  end
 end
 
 def show
