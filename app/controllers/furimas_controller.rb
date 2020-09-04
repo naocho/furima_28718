@@ -28,7 +28,9 @@ def create
 end
 
 def destroy
-
+  item = Furima.find(params[:id])
+  item.destroy
+  redirect_to root_path
 end
 #unless user_signed_in?
 #   redirect_to hoge_path
