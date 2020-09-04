@@ -41,8 +41,6 @@ end
 #editとupdateはセットで考えて良いと思う
 #editで定義したのはupdateでも定義して使うことが可能
 def update
- 
-  @item.update(item_params)
 
   if @item.update(item_params)
     redirect_to root_path
