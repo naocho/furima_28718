@@ -36,12 +36,12 @@ end
 #購入画面のコントローラにて入れて、ログインしていないユーザーをサインインに飛ばす
 
 def edit
-  # @item = Furima.find(params[:id])
+  
 end
 #editとupdateはセットで考えて良いと思う
 #editで定義したのはupdateでも定義して使うことが可能
 def update
-  # @item = Furima.find(params[:id])
+ 
   @item.update(item_params)
 
   if @item.update(item_params)
@@ -52,7 +52,7 @@ def update
 end
 
 def show
-  # @item = Furima.find(params[:id])
+ 
   #findメソッドはモデル名.find(レコード:id)と言う書き方
 end
 
