@@ -2,7 +2,7 @@
 # またコントローラとモデルは全て名前を統一させる事
 class FurimasController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :edit_update, only: [:edit, :update, :show]
+  before_action :edit_update, only: [:edit, :update, :destroy, :show]
 
 def index
   @items = Furima.all.order("created_at DESC")
@@ -28,7 +28,6 @@ def create
 end
 
 def destroy
-  item = Furima.find(params[:id])
   item.destroy
   redirect_to root_path
 end
