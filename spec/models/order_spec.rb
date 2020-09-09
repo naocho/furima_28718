@@ -17,7 +17,6 @@ describe Intermediary, type: :model do
   describe '商品購入機能' do
       context '新規登録がうまくいくとき' do
         it "カラムが全て存在すれば登録できる" do
-          # expect(@intermediary).to be_valid
           expect(@intermediary).to be_valid
         end
         it "郵便番号がある" do
@@ -38,6 +37,10 @@ describe Intermediary, type: :model do
         end
         it "建物名がある" do
           @intermediary.building_name = "高居ビル"
+          expect(@intermediary).to be_valid
+        end
+        it "建物名がない" do
+          @intermediary.building_name = nil
           expect(@intermediary).to be_valid
         end
         it "電話番号がある" do
@@ -68,6 +71,11 @@ describe Intermediary, type: :model do
       @intermediary.valid?
       expect(@intermediary.errors.full_messages).to include("Prefecture can't be blank", "Prefecture is not a number")
      end
+     it "都道府県の指定が最初に入っている時" do
+      @intermediary.prefecture_id  = 1
+      @intermediary.valid?
+      expect(@intermediary.errors.full_messages).to include("Prefecture must be other than 1")
+     end
     it "市区町村がない" do
       @intermediary.village = nil
       @intermediary.valid?
@@ -83,7 +91,7 @@ describe Intermediary, type: :model do
       @intermediary.valid?
       expect(@intermediary.errors.full_messages).to include("Phone number can't be blank", "Phone number is invalid")
     end
-      it "電話番号が合わない。" do
+      it "電話番号がおかしく記入されてる時。" do
       @intermediary.postal_code  = "0908888336378"
       @intermediary.valid?
       expect(@intermediary.errors.full_messages).to include("Postal code is invalid")    

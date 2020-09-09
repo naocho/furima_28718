@@ -5,13 +5,11 @@ class OrdersController < ApplicationController
 
   def index
     @intermediary = Intermediary.new
-    # @item = Intermediary.find(params[:furima_id])
-    #(params[:furima_id])のid部分に関してはルーティングのURI Patternのidで確認していれること。
-    #またテーブルでユーザを指定してここでは入ってきているのでさらにidを指定する必要がある。
+
   end
 
   def create
-    # binding.pry
+
     @intermediary = Intermediary.new(item_params)
 
     if @intermediary.valid?
@@ -28,8 +26,8 @@ private
 
 # def item_params
 #   params.require(:intermediary).permit(:explanation, :category_id, :status_id, :delivery_fee_id, :area_id, :delivery_day_id, :price, :postal_code, :prefectures, :village, :address, :building_name, :phone_number, :token)
-# end
-
+    #(params[:furima_id])のid部分に関してはルーティングのURI Patternのidで確認していれること。
+    #またテーブルでユーザを指定してここでは入ってきているのでさらにidを指定する必要がある。
 def item_params
   params.permit(:image, :name, :explanation, :category_id, :status_id, :delivery_fee_id, :delivery_day_id, :price, :postal_code, :prefecture_id, :village, :address, :building_name, :phone_number, :token, :furima_id).merge(user_id: current_user.id)
   #attr_accessorとここのIDは全て一致させる。

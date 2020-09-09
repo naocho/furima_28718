@@ -2,7 +2,6 @@ class Intermediary
   include ActiveModel::Model
   #この記述もフォームオブジェクトで必要な記述
   attr_accessor :postal_code, :prefecture_id, :village, :address, :building_name, :phone_number, :token, :furima_id, :user_id
-               #:image, :name, :explanation, :category_id, :status_id, :delivery_fee_id, :delivery_day_id, :price, :postal_code, :prefecture_id, :village, :address, :building_name, :phone_number, :token, :furima_id
   #これは連結させるテーブルのカラムを全部書く
 
   with_options presence: true do 

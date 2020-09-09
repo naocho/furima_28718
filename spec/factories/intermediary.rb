@@ -1,10 +1,3 @@
-# FactoryBot.define do
-#   factory :intermediary do
-#     association :user
-#     association :furima
-#   end
-# end
-
 FactoryBot.define do
   factory :intermediary do
     postal_code               {"987-3456"}

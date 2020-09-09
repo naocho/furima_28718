@@ -10,5 +10,4 @@ FactoryBot.define do
     # user_id
     # furima_id
   end
-  # rspecのアソシエーションの組み方を探す
 end
