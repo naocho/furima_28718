@@ -14,7 +14,6 @@ class Intermediary
   end 
 
   def save
-    # binding.pry
     # Furima.create(image: image, name: name, explanation: explanation, category_id: category_id, status_id: status_id, delivery_fee_id: delivery_fee_id, delivery_day_id: delivery_day_id, price: price)
     contact = Contact.create(furima_id: furima_id, user_id: user_id)
     #中間テーブルも変数に変えてidにしてフォームオブジェクトに入れる必要あり。
