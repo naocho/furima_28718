@@ -15,7 +15,7 @@
 
 ### Association
 ## has_many :furima
-## has_many :purchases
+## has_many :intermediary
 
 ## furima テーブル
 
@@ -34,15 +34,17 @@
 
 ### Association
 ##  belongs_to :user
-##  has_one :purchase
+##  has_one :intermediary
 
-## purchase テーブル
+## intermediary テーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | user     | references | null: false, foreign_key: true |
 | furima   | references | null: false, foreign_key: true |
 
+t.references :user,   null: false, foreign_key: true
+t.references :furima,   null: false, foreign_key: true
 
 ### Association
 ## belongs_to :furima
@@ -53,7 +55,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| purchase      | references | null: false, foreign_key: true |
+| intermediary  | references | null: false, foreign_key: true |
 | postal_code   | string     | null: false                    |
 | prefectures   | integer    | null: false                    |
 | village       | string     | null: false                    |
@@ -62,4 +64,4 @@
 | phone_numder  | string     | null: false                    |
 
 ### Association
-## belongs_to :purchase
+## belongs_to :intermediary

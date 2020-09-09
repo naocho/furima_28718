@@ -9,6 +9,7 @@ FactoryBot.define do
     surname               {"直樹"}
     kana_surname          {"ナオキ"}
     birthday              {"1933-06-06"}
+    # association :intermediary 
   end
 end
 

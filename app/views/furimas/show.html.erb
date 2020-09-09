@@ -9,36 +9,45 @@
     <div class='item-img-content'>
       <%= image_tag @item.image ,class:"item-box-img" %>
       <%# 商品が売れている場合は、sold outの表示をしましょう。 %>
-      <div class='sold-out'>
-        <span>Sold Out!!</span>
-      </div>
+      <% if @item.contact != nil %>
+      <%# <% if contacts != nil %> 
+        <div class='sold-out'>
+          <span>Sold Out!!</span>
+        </div>
+      <% end %>
       <%# //商品が売れている場合は、sold outの表示をしましょう。 %>
     </div>
     <div class="item-price-box">
       <span class="item-price">
-        ¥ 999,999,999
+        ¥ <%= @item.price %>
       </span>
       <span class="item-postage">
         (税込) 送料込み
       </span>
     </div>
-
+<%# @item.contact != nil && %>
     <%# ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう%>
    <% if user_signed_in? && current_user.id == @item.user_id %>
     <%= link_to '商品の編集', edit_furima_path, method: :get, class: "item-red-btn" %>
     <p class='or-text'>or</p>
     <%= link_to '削除', furima_path, method: :delete, class:'item-destroy' %>
-    <% end %>
-
+    <%# <% end %> 
+<% else %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
-  <% if  user_signed_in? && current_user.id != @item.user_id %>
-    <%= link_to '購入画面に進む', "#" ,class:"item-red-btn"%>
+  <% if  @item.contact == nil %>
+    <%= link_to '購入画面に進む', furima_orders_path(@item.id) ,class:"item-red-btn"%>
+  <% end %>
+  <% end %>
 
-    <% elsif user_signed_in? == false %>
-    <%= link_to '購入画面に進む', "/users/sign_up" ,class:"item-red-btn"%>
+  <%# <% if  user_signed_in?  && current_user.id != @item.user_id %> 
+    <%#= link_to '購入画面に進む', "/furimas/#{:furima_id}/orders" ,class:"item-red-btn"%>
+    <%# <%= link_to '購入画面に進む', furima_orders_path(@item.id) ,class:"item-red-btn"%> 
+<%# furima_orders_path(@item.id)この()にはテーブルのどのデータを入れるかを決める、今回はitemテーブルの情報が欲しかったからそのインスタンス変数を入れた。 %>
+    <%# <% elsif user_signed_in? == false %>
+    <%# <%= link_to '購入画面に進む', "/users/sign_up" ,class:"item-red-btn"%>
     
     <%# //商品が売れていない場合はこちらを表示しましょう %>
- <% end %>
+ <%# <% end %>
     <%# // ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう %>
 
     <div class="item-explain-box">

@@ -75,6 +75,7 @@ end
 
 def edit_update
   @item = Furima.find(params[:id])
+#(params[:furima_id])のid部分に関してはルーティングのURI Patternのidで確認していれること。
 end
 
 
