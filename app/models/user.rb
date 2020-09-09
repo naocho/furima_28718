@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :furimas
+  # has_many :contact
+  has_many :intermediary
   # has_many :purchases
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
