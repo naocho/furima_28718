@@ -6,6 +6,7 @@ class FurimasController < ApplicationController
 
 def index
   @items = Furima.all.order("created_at DESC")
+  # @item = Contact
 end
 
 def new
