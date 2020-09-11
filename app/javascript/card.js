@@ -5,6 +5,7 @@ const pay = () => {
     e.preventDefault();
  
     const formResult = document.getElementById("charge-form");
+    //関数はviweのidから持ってくる。
     const formData = new FormData(formResult);
  
     const card = {
@@ -25,7 +26,7 @@ const pay = () => {
       document.getElementById("card-cvc").removeAttribute("name");
       document.getElementById("card-exp-month").removeAttribute("name");
       document.getElementById("card-exp-year").removeAttribute("name");
- 
+      //ここもidから持ってきて後ろの.removeAttribute("name")でカード情報を消す、カード情報をデータベースに残してはだめ
       document.getElementById("charge-form").submit();
       document.getElementById("charge-form").reset();
     });
