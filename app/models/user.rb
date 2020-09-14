@@ -23,3 +23,21 @@ class User < ApplicationRecord
   end
   # validatesで指定の文以外を記入の場合はテーブルに記録されなくなる。
 end
+
+
+# class Menber < ApplicationRecord
+#   # Include default devise modules. Others available are:
+#   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+#   devise :database_authenticatable, :registerable,
+#          :recoverable, :rememberable, :validatable
+
+#   with_options presence: true do 
+#     validates :name,
+#     validates :kana_name,
+#     validates :email,
+#     validates :phone_numder,
+#     validates :address,
+#     validates :license_table,
+#     validates :license_back,
+#   end
+# end
