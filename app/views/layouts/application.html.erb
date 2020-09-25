@@ -6,8 +6,11 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <script type="text/javascript" src="https://js.pay.jp/v1/"></script>
+  <%# 上記の記述はpay.jpを使用する際には必ず必要になる記述 %>
   <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%# cssを一括で読み込む際に必要となるrailsのみで使える記述 %>
   <%= javascript_pack_tag 'application' %>
+  <%# ビューを一括で読み込む際に必要となるrailsのみで使える記述 %>
 </head>
 
 <body>
